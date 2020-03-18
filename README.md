@@ -2,3 +2,5 @@
 CS 205 Software Engineering Pair Project: Classroom Scheduler
 
 By: Rachel Goldman and Stanhope Nwosu
+
+
