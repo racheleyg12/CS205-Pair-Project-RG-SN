@@ -1,6 +1,5 @@
 
 public class Professor{
-    //—————Fields—————
     //      name: string
     String name;
     //      department/subject: string
@@ -9,14 +8,13 @@ public class Professor{
     String office;
     //      email: string
     String email;
-    //      —————Methods—————
 
    //Constructor
     public Professor(){
         name = "Jesse Doe";
-        dept = 'English';
-        office = '123 Marsh Life';
-        email = 'jdoe@email.com';
+        dept = "English";
+        office = "123 Marsh Life";
+        email = "jdoe@email.com";
     }
    public Professor(String n, String d, String o, String e){
         name = n;

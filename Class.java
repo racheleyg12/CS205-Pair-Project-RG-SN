@@ -18,8 +18,8 @@ public class Class {
 
     //Constructor
     public Class(){
-        dept = '';
-        name = '';
+        dept = "";
+        name = "";
         prof = new Professor();
         capactiy = 20;
         time[0] = 1;
