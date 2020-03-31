@@ -23,6 +23,8 @@ public class Professor{
         email = e;
    }
 
+   // TODO: Rachel's notes:
+
     // Getters
     public String getName() {
         return name;
