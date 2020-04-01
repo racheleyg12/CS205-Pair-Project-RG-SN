@@ -3,7 +3,7 @@ CS 205 Software Engineering Pair Project: Classroom Scheduler
 
 Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
 
-The main program wil run in the Schedule class.
+The main program wil run in the Schedule class. We changed all sets to arrays from the initial submission of the outline.
 
 By: Rachel Goldman and Stanhope Nwosu
 
@@ -14,11 +14,12 @@ Class
         name: string  
         professor: Professor  
         class capacity: int  
-        prerequisite course(s): set <Class>  
+        prerequisite course(s): Array<Class>  
         time: double[] //Start time & end time  
         —————Methods—————  
         getters, initializer/constructor
-          
+        
+            
 Classroom  
         —————Fields—————  
         building: string  
@@ -28,15 +29,18 @@ Classroom
         availability: double[]     //An array/list/or vector of time slots  
         —————Methods—————  
         getters, initializer/constructor  
-          
+
+  
 Professor  
         —————Fields—————  
         name: string  
-        department/subject: string  
-        //office location & email  
+        department/subject: string
+        office location: string  
+        email: string      
         —————Methods—————  
         getters, initializer/constructor  
-          
+
+  
 Schedule:  
         —————Fields—————  
         Classes: set <Class>  
