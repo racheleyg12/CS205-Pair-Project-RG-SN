@@ -9,21 +9,21 @@ By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
 Class   
-        —————Fields—————
-        department/subject: string
-        name: string
-        professor: Professor
-        class capacity: int
-        prerequisite course(s): set <Class>
-        time: double[] //Start time & end time
-        —————Methods—————
-        getters, initializer/constructor
-Classroom
-        —————Fields—————
-        building: string
-        room number: string (ie. E204) 
-        name: string (building + room number)
-        class capacity: int
+        —————Fields—————  
+        department/subject: string  
+        name: string  
+        professor: Professor  
+        class capacity: int  
+        prerequisite course(s): set <Class>  
+        time: double[] //Start time & end time  
+        —————Methods—————  
+        getters, initializer/constructor  
+Classroom  
+        —————Fields—————  
+        building: string  
+        room number: string (ie. E204)   
+        name: string (building + room number)  
+        class capacity: int  
         availability: double[]     //An array/list/or vector of time slots
         —————Methods—————
         getters, initializer/constructor
