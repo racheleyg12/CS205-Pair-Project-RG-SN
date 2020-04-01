@@ -17,7 +17,8 @@ Class
         prerequisite course(s): set <Class>  
         time: double[] //Start time & end time  
         —————Methods—————  
-        getters, initializer/constructor  
+        getters, initializer/constructor
+          
 Classroom  
         —————Fields—————  
         building: string  
@@ -27,6 +28,7 @@ Classroom
         availability: double[]     //An array/list/or vector of time slots  
         —————Methods—————  
         getters, initializer/constructor  
+          
 Professor  
         —————Fields—————  
         name: string  
@@ -34,6 +36,7 @@ Professor
         //office location & email  
         —————Methods—————  
         getters, initializer/constructor  
+          
 Schedule:  
         —————Fields—————  
         Classes: set <Class>  
