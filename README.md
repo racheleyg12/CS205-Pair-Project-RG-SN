@@ -24,33 +24,33 @@ Classroom
         room number: string (ie. E204)   
         name: string (building + room number)  
         class capacity: int  
-        availability: double[]     //An array/list/or vector of time slots
-        —————Methods—————
-        getters, initializer/constructor
-Professor
-        —————Fields—————
-        name: string
-        department/subject: string
-        //office location & email
-        —————Methods—————
-        getters, initializer/constructor
-Schedule:
-        —————Fields—————
-        Classes: set <Class>
-        Classrooms: set <Classrooms>
-        Professor: set <Professors>
-        Students: set <Students>
-        —————Methods—————
-        addClass (Class c)
-        list <Class> getClasses
-        Class findClass (string name)        
-        addClassroom (Classroom r)
-        list <Classroom> getClasssrooms
-        Classroom findClassroom (string name)
-        addProfessor (Professor p)
-        list <Professor> getProfessors
-        Professor findProfessor(string name)
-        //Returns Optimally schedule of all classes & classrooms in the object
-        list<string> scheduleClasses()
-        //Gets all classes occurring in classroom
-        list<Class> getClassesInClassroom(Classroom r)
+        availability: double[]     //An array/list/or vector of time slots  
+        —————Methods—————  
+        getters, initializer/constructor  
+Professor  
+        —————Fields—————  
+        name: string  
+        department/subject: string  
+        //office location & email  
+        —————Methods—————  
+        getters, initializer/constructor  
+Schedule:  
+        —————Fields—————  
+        Classes: set <Class>  
+        Classrooms: set <Classrooms>  
+        Professor: set <Professors>  
+        Students: set <Students>  
+        —————Methods—————  
+        addClass (Class c)    
+        list <Class> getClasses  
+        Class findClass (string name)          
+        addClassroom (Classroom r)  
+        list <Classroom> getClasssrooms  
+        Classroom findClassroom (string name)  
+        addProfessor (Professor p)  
+        list <Professor> getProfessors  
+        Professor findProfessor(string name)  
+        //Returns Optimally schedule of all classes & classrooms in the object    
+        list<string> scheduleClasses()  
+        //Gets all classes occurring in classroom  
+        list<Class> getClassesInClassroom(Classroom r)  
