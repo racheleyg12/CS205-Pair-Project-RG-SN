@@ -1,4 +1,6 @@
-
+/* class Schedule
+ * Main part of program will be scheduling classes in classroom
+ */
 public class Schedule{
     //—————Fields—————
     //      Classes: set <Class>
