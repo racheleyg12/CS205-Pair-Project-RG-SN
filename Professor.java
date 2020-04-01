@@ -1,29 +1,24 @@
-
 public class Professor{
-    //      name: string
-    String name;
-    //      department/subject: string
-    String dept;
-    //      office location: string
-    String office;
-    //      email: string
-    String email;
+    //Fields
+    String name;     //name: string
+    String dept;     //department/subject: string
+    String office;   //office location: string
+    String email;    //email: string
 
-   //Constructor
+    //Default Constructor
     public Professor(){
         name = "Jesse Doe";
         dept = "English";
         office = "123 Marsh Life";
         email = "jdoe@email.com";
     }
-   public Professor(String n, String d, String o, String e){
+    //Constructor
+    public Professor(String n, String d, String o, String e){
         name = n;
         dept = d;
         office = o;
         email = e;
-   }
-
-   // TODO: Rachel's notes:
+    }
 
     // Getters
     public String getName() {
