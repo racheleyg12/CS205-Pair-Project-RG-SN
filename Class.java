@@ -3,20 +3,17 @@ import java.util.Scanner;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Class {
-//    department/subject: string
-//    name: string
-    String dept, name;
-//    professor: Professor
-    Professor prof;
-//    class capacity: int
-    int capactiy;
-//    prerequisite course(s): set <Class>
-    set<Class> preReq;
-//    time: double[] //Start time & end time
-    double[] time;
 
-    //Constructor
+public class Class {
+   //Fields
+    String dept, name;        //department/subject: string & name: string
+    Professor prof;           //professor: Professor
+    int capactiy;             //class capacity: int
+    ArrayList<Class> preReq;  //prerequisite course(s): set <Class>
+    double[] time;            //Start time & end time
+    
+
+    //Default Constructor
     public Class(){
         dept = "";
         name = "";
@@ -25,8 +22,9 @@ public class Class {
         time[0] = 1;
         time[1] = 2;
     }
-
-    public Class(String dept, String name, Professor p, int cap, set<Class> reqs, double[] length) {
+    
+    //Constructor
+    public Class(String dept, String name, Professor p, int cap, ArrayList<Class> reqs, double[] length) {
         this.dept = dept;
         this.name = name;
         prof = p;
@@ -48,7 +46,7 @@ public class Class {
     public int getCapactiy() {
         return capactiy;
     }
-    public set<Class> getPreReq() {
+    public ArrayList<Class> getPreReq() {
         return preReq;
     }
     public double[] getTime() {
