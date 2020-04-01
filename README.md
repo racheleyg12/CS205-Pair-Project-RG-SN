@@ -7,8 +7,8 @@ The main program wil run in the Schedule class.
 
 By: Rachel Goldman and Stanhope Nwosu
 
-Outline of Classes:
-Class
+Outline of Classes:  
+Class   
         —————Fields—————
         department/subject: string
         name: string
