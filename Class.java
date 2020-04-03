@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class Class {
    //Fields
-    String dept, name;        //department/subject: string & name: string
-    Professor prof;           //professor: Professor
-    int capactiy;             //class capacity: int
-    ArrayList<Class> preReq;  //prerequisite course(s): set <Class>
-    double[] time;            //Start time & end time
+    String dept, name;                 //department/subject: string & name: string
+    Professor prof;                    //professor: Professor
+    int capactiy;                      //class capacity: int
+    ArrayList<Class> preReq;           //prerequisite course(s): set <Class>
+    double[] time = new double[2];     //Start time & end time
     
 
     //Default Constructor
@@ -50,6 +50,16 @@ public class Class {
     }
     public double[] getTime() {
         return time;
+    }
+    
+    public int compareTo(Class compareClass) {
+        if (this.time[1] < compareClass.getTime()[1]){
+            return -1;
+        } else if (this.time[1] > compareClass.getTime()[1]){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
 }
