@@ -14,7 +14,7 @@ Some Changes:
 
 Standards:    
 -Classroom are available 8am to 8pm   
--Classes are schedule on the hour, (ie. 8am, 9am, 10am, ..., 7pm, 8pm). 
+-Classes are schedule on the hour, (ie. 8am, 9am, 10am, ..., 7pm, 8pm).    
 -Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.       
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).   
 
