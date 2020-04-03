@@ -77,6 +77,7 @@ Outline of Classes:
         Boolean findProfessor(string name) 
         Arraylist<Class> getClasses 
         Arraylist<Classroom> getClasssrooms
+        Arraylist<Professor> getProfessor
         
         //Returns Optimally schedule of all classes & classrooms in the object    
         Arraylist<String> scheduleClasses()  
