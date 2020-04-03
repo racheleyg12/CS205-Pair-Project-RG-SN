@@ -11,7 +11,11 @@ Some Changes:
 -Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor.  
 -We changed find methods to return a boolean, true if class and professor are found, false otherwise.  
 -To Class we added compareTo method in order to sort(by finish time) and compatible method to see which other classes are not overlapping with it.  
-        
+
+Standards:  
+-Classroom are available 8am to 8pm   
+-Classes are schedule on the hour, (ie. 8am, 9am, 10am, ..., 7pm, 8pm)  
+-Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).  
 
 By: Rachel Goldman and Stanhope Nwosu
 
