@@ -2,8 +2,7 @@
  * Main part of program will be scheduling classes in classroom
  * in class schedule
  */
-import java.util.Stack;
-import java.util.Scanner;
+import java.util.Collections
 import java.io.*;
 import java.util.ArrayList;
 
