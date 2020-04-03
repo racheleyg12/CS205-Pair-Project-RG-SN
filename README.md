@@ -5,11 +5,11 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 
 The main program wil run in the Schedule class. 
 
-Some Changes:
--From the initial proposal we got rid of student class. 
--We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor. 
--We changed find methods to return a boolean, true if class and professor are found, false otherwise.
--To Class we added compareTo method in order to sort(by finish time) and compatible method to see which other classes are not overlapping with it.
+Some Changes:  
+-From the initial proposal we got rid of student class.  
+-We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor.  
+-We changed find methods to return a boolean, true if class and professor are found, false otherwise.  
+-To Class we added compareTo method in order to sort(by finish time) and compatible method to see which other classes are not overlapping with it.  
         
 
 By: Rachel Goldman and Stanhope Nwosu
