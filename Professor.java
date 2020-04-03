@@ -7,10 +7,10 @@ public class Professor{
 
     //Default Constructor
     public Professor(){
-        name = "Jesse Doe";
-        dept = "English";
-        office = "123 Marsh Life";
-        email = "jdoe@email.com";
+        name = "Robert Erickson";
+        dept = "CS";
+        office = "Innovation 304E";
+        email = "rerickso@uvm.edu";
     }
     //Constructor
     public Professor(String n, String d, String o, String e){

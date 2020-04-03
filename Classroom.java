@@ -7,21 +7,21 @@ public class Classroom {
    double[] availability; //availability: double[] //An array/list/or vector of time slots
    
    //Default Constructor
-   public Classroom(){
-   building = "Innovation";
-   roomNum = 204;
-   name = "Innovation" + 204;
-   capcity = 50;
-   availability = new double[9];;
+      public Classroom(){
+      building = "Innovation";
+      roomNum = 204;
+      name = "Innovation" + 204;
+      capcity = 50;
+      availability = new double[9]; //9 hours
    }
    
    //Constructor
    public Classroom(String building, int room, int cap, double[] avail){
-   this.building = building;
-   roomNum = room;
-   name = building + " " + room;
-   capcity = cap;
-   availability = avail;
+      this.building = building;
+      roomNum = room;
+      name = building + " " + room;
+      capcity = cap;
+      availability = avail;
    }
    
    //Getters

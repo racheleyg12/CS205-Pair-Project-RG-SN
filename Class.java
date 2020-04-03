@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.io.*;
 import java.util.ArrayList;
 
-
 public class Class {
    //Fields
     String dept, name;        //department/subject: string & name: string
@@ -15,9 +14,9 @@ public class Class {
 
     //Default Constructor
     public Class(){
-        dept = "";
-        name = "";
-        prof = new Professor();
+        dept = "CS";
+        name = "CS008 Intro to Web Site Dev";
+        prof = new Professor(); //Default Professor is Bob
         capactiy = 20;
         time[0] = 1;
         time[1] = 2;
