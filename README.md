@@ -9,7 +9,8 @@ The main program wil run in the Schedule class. From the initial proposal we got
 By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
-Class---------------------------------------------   
+---------------------------------------Class---------------------------------------------   
+```
         —————Fields—————  
         department/subject: string  
         name: string  
@@ -19,9 +20,10 @@ Class---------------------------------------------
         time: double[] //Start time & end time  
         —————Methods—————  
         getters, initializer/constructor
-        
+ ```       
             
-Classroom-------------------------------------------  
+----------------------------------------Classroom-------------------------------------------  
+```
         —————Fields—————  
         building: string  
         room number: string (ie. E204)   
@@ -30,9 +32,10 @@ Classroom-------------------------------------------
         availability: double[]     //An array/list/or vector of time slots  
         —————Methods—————  
         getters, initializer/constructor  
-
+```
   
-Professor-------------------------------------------  
+-----------------------------------------Professor-------------------------------------------  
+```
         —————Fields—————  
         name: string  
         department/subject: string
@@ -40,9 +43,10 @@ Professor-------------------------------------------
         email: string      
         —————Methods—————  
         getters, initializer/constructor  
-
+```
   
-Schedule--------------------------------------------  
+------------------------------------------Schedule-------------------------------------------- 
+```
         —————Fields—————  
         Classes: set <Class>  
         Classrooms: set <Classrooms>    
@@ -61,3 +65,4 @@ Schedule--------------------------------------------
         
         //Gets all classes occurring in classroom  
         Arraylist<Class> getClassesInClassroom(Classroom r)  
+```
