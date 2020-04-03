@@ -52,6 +52,7 @@ public class Class {
         return time;
     }
     
+    //compareTo compares the endtime
     public int compareTo(Class compareClass) {
         if (this.time[1] < compareClass.getTime()[1]){
             return -1;
@@ -60,6 +61,15 @@ public class Class {
         } else {
             return 0;
         }
+    }
+    
+    //compatible method makes sure classes do not overlap 
+    public boolean compatible(Class otherClass){
+         if(otherClass.getTime[0] > this.time[1]){    //otherClass startime > this class's endtime
+               return false;
+         }
+         return true;
+    
     }
 
 }
