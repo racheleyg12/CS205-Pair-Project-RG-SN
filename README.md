@@ -3,7 +3,10 @@ CS 205 Software Engineering Pair Project: Classroom Scheduler
 
 Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
 
-The main program wil run in the Schedule class. From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor.
+The main program wil run in the Schedule class. 
+
+Some Changes:
+From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor. We changed find methods to return a boolean, true if class and professor are found, false otherwise.
         
 
 By: Rachel Goldman and Stanhope Nwosu
