@@ -5,13 +5,14 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 
 The main program wil run in the Schedule class. 
 
-Some Changes:  
--From the initial proposal we got rid of student class (like we said).  
--We changed all sets to ArraysLists from the initial submission of the outline.  
+Changes made for better encapsulation & functionailty:  
+-From the initial proposal we got rid of Student class (like we agreed upon).  
+-We changed all Sets to ArraysLists from the initial submission of the outline.  
 -Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor needs to be part of a Class.    
--We changed find methods to return a boolean, to return true if class and professor are found, false otherwise.  
+-We changed find methods in Schedule to return a boolean, to return true if class and professor are found, false otherwise.  
 -To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
--To classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes.  
+-To classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
+-We changed availability to scheduled: boolean, which is true if classes are already scheduled in the classroom and false if not.   
 
 Standards:    
 -Classroom are available 8am to 8pm.      
