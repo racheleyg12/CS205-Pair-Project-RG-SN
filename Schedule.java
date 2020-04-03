@@ -1,81 +1,100 @@
-/* class Schedule
+/* Class Schedule
  * Main part of program will be scheduling classes in classroom
+ * in class schedule
  */
-public class Schedule{
-    //—————Fields—————
-    //      Classes: set <Class>
-    set<Class> classes;
-    //      Classrooms: set <Classrooms>
-    set<Classroom> classroomset;
-    //      Professor: set <Professors>
-    set<Professor> professors;
-    //      Students: set <Students>
-    set<Student> students; //is this class/set still needed
+import java.util.Stack;
+import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
 
-    ///methods:
-    //  addClass (Class c)
+public class Schedule{
+    //Fields
+    ArrayList<Class> classes;          //Classes: set <Class>
+    ArrayList<Classroom> classrooms;   //Classrooms: set <Classrooms>
+    
+    //Default Constructor
+    public Schedule(){
+         classes = new ArrayList<Class>();
+         classroomset = new ArrayList<Classroom>();
+    }
+    
+    //Constructor
+    public Schedule(ArrayList<Class> classes, ArrayList<Classroom> classrooms){
+         this.classes = classes;
+         this.classrooms = classrooms;
+    }
+
+    //Methods
+    //add Class
     public void addClass(Class c){
-        classes.add(c);
-    } //TODO: clean up and checks
-    //      list <Class> getClasses //TODO: clean up and checks
-    public list<Class> getClasses() {
-        return classes;
+         classes.add(c);
     }
-    //      Class findClass (string name)
-    public Class findClass(String name){ //TODO: clean up and checks
-        for (Class c : classes) {
-            if(c.name == name){ //by name or dept?
-                return c;
-            } //what if there are multiples
-        }
-    }
-    //      addClassroom (Classroom r) //TODO: clean up and checks
+    //add Classroom
     public void addClassroom(Classroom r){
         classroomset.add(r);
     }
-    //      list <Classroom> getClasssrooms //TODO: clean up and checks
-    public set<Classroom> getClassroomset() {
+ 
+    //Getters
+    public ArrayList<Class> getClasses() {
+        return classes;
+    }
+    public ArrayList<Classroom> getClassroomset() {
         return classroomset;
     }
-    //      Classroom findClassroom (string name)
-    public Classroom findClassroom(String name){ //TODO: clean up and checks
-        for (Classroom cr : classroomset) {
-            if(cr.name == name){ // checking by name (building + room)
-                return cr;
-            } //what if there are multiples
+    public ArrayList<Professor> getProfessors() {
+        ArrayList<professors> profs;
+        //TODO: return profs
+        //TODO: return none if there are to classes
+        return profs;
+    }
+
+
+    
+    //Find Class
+    public boolean findClass(String name){ 
+        for (Class c : classes) {
+            if(c.name == name){ 
+                return true;
+            } 
         }
+        return false;
     }
-    //      addProfessor (Professor p) ///TODO: clean up and checks
-    public void addProfessor(Professor p) {
-        professors.add(p);
+    //Find Classroom
+    public boolean findClassroom(String name){ 
+        for (Classroom cr : classrooms) {
+            if(cr.name == name){ // checking by name (building + room)
+                return true;
+            } 
+        }
+        return false;
     }
-    //      list <Professor> getProfessors //TODO: clean up and checks
-    public set<Professor> getProfessors() {
-        return professors;
-    }
-    //      Professor findProfessor(string name)
-    public Professor findProfessor(string name){ //TODO: clean up and checks
-        for (Professor p : professors) {
-            if(p.name == name){ //what if there are multiple porfessors of same name
-                return p;
+    //Find Professor
+    public boolean findProfessor(String name){ 
+        for (Class c : classes){
+            if (c.getProf().getName() == name){
+               return true;        // if professor is in one of the classes in the schedule return false
             }
         }
-        // if no professors match, then nothing
-    }
+        return false;              // if no professors match return false
+     }
 
     //Schedule classes base on their time & availability of classrooms
     //Optimally schedule classes - using least amount of classrooms
     //Returns Optimally schedule of all classes & classrooms in the object
-    public list<string> scheduleClasses(){ //TODO: clean up, checks, implements
+    public ArrayList<String> scheduleClasses(){ 
+        //TODO: ACTUALLY IMPLEMENT
+        //TODO: CASE IF THERE IS NOT ENOUGH CLASSROOMS FOR CLASSES
+        //TODO: CASE IF THERE IS NO CLASSES
         list<string> sched = new list<string>;
-
         return sched;
     }
 
     //Gets all classes occurring in classroom
-    list<Class> getClassesInClassroom(Classroom r){ //TODO: clean up, checks, implements
-        list<Class> inRoom = new list<Class>();
-
+    ArrayList<Class> getClassesInClassroom(Classroom r){ 
+        //TODO: ACTUALLY IMPLEMENT
+        //TODO: CASE IF CLASSROOM DOES NOT EXIST
+        //TODO: CASE IF THERE ARE NO CLASSES IN CLASSROOM
+        ArrayList<Class> inRoom = new list<Class>();
         return inRoom;
     }
 
