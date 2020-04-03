@@ -5,9 +5,18 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 
 The main program wil run in the Schedule class. 
 
-Some Changes:
-From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor. We changed find methods to return a boolean, true if class and professor are found, false otherwise.
-        
+Some Changes:  
+-From the initial proposal we got rid of student class.  
+-We changed all sets to arrays from the initial submission of the outline.  
+-Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor.  
+-We changed find methods to return a boolean, true if class and professor are found, false otherwise.  
+-To Class we added compareTo method in order to sort(by finish time) and compatible method to see which other classes are not overlapping with it.  
+
+Standards:    
+-Classroom are available 8am to 8pm   
+-Classes are schedule on the hour, (ie. 8am, 9am, 10am, ..., 7pm, 8pm).    
+-Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.       
+-Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).   
 
 By: Rachel Goldman and Stanhope Nwosu
 
@@ -23,6 +32,8 @@ Outline of Classes:
         time: double[] //Start time & end time  
         —————Methods—————  
         getters, initializer/constructor
+        int compareTo(Class c)
+        boolean compatible(Class c)
  ```       
             
 ----------------------------------------Classroom-------------------------------------------  
