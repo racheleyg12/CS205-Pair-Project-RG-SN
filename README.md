@@ -3,12 +3,12 @@ CS 205 Software Engineering Pair Project: Classroom Scheduler
 
 Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
 
-The main program wil run in the Schedule class. We changed all sets to arrays from the initial submission of the outline.
+The main program wil run in the Schedule class. From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline.
 
 By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
-Class   
+Class---------------------------------------------   
         —————Fields—————  
         department/subject: string  
         name: string  
@@ -20,7 +20,7 @@ Class
         getters, initializer/constructor
         
             
-Classroom  
+Classroom-------------------------------------------  
         —————Fields—————  
         building: string  
         room number: string (ie. E204)   
@@ -31,7 +31,7 @@ Classroom
         getters, initializer/constructor  
 
   
-Professor  
+Professor-------------------------------------------  
         —————Fields—————  
         name: string  
         department/subject: string
@@ -41,12 +41,10 @@ Professor
         getters, initializer/constructor  
 
   
-Schedule:  
+Schedule--------------------------------------------  
         —————Fields—————  
         Classes: set <Class>  
-        Classrooms: set <Classrooms>  
-        Professor: set <Professors>  
-        Students: set <Students>  
+        Classrooms: set <Classrooms>    
         —————Methods—————  
         addClass (Class c)    
         list <Class> getClasses  
