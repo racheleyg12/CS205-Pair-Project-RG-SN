@@ -3,12 +3,17 @@ CS 205 Software Engineering Pair Project: Classroom Scheduler
 
 Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
 
-The main program wil run in the Schedule class. From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline.
+The main program wil run in the Schedule class. 
+
+Some Changes:
+From the initial proposal we got rid of student class. We changed all sets to arrays from the initial submission of the outline. Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor. We changed find methods to return a boolean, true if class and professor are found, false otherwise.
+        
 
 By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
-Class---------------------------------------------   
+---------------------------------------Class---------------------------------------------   
+```
         —————Fields—————  
         department/subject: string  
         name: string  
@@ -18,9 +23,10 @@ Class---------------------------------------------
         time: double[] //Start time & end time  
         —————Methods—————  
         getters, initializer/constructor
-        
+ ```       
             
-Classroom-------------------------------------------  
+----------------------------------------Classroom-------------------------------------------  
+```
         —————Fields—————  
         building: string  
         room number: string (ie. E204)   
@@ -29,9 +35,10 @@ Classroom-------------------------------------------
         availability: double[]     //An array/list/or vector of time slots  
         —————Methods—————  
         getters, initializer/constructor  
-
+```
   
-Professor-------------------------------------------  
+-----------------------------------------Professor-------------------------------------------  
+```
         —————Fields—————  
         name: string  
         department/subject: string
@@ -39,23 +46,26 @@ Professor-------------------------------------------
         email: string      
         —————Methods—————  
         getters, initializer/constructor  
-
+```
   
-Schedule--------------------------------------------  
+------------------------------------------Schedule-------------------------------------------- 
+```
         —————Fields—————  
         Classes: set <Class>  
         Classrooms: set <Classrooms>    
         —————Methods—————  
-        addClass (Class c)    
-        list <Class> getClasses  
-        Class findClass (string name)          
+        initializer/constructor
+        addClass (Class c)             
         addClassroom (Classroom r)  
-        list <Classroom> getClasssrooms  
-        Classroom findClassroom (string name)  
-        addProfessor (Professor p)  
-        list <Professor> getProfessors  
-        Professor findProfessor(string name)  
+        Boolean findClass (string name) 
+        Boolean findClassroom (string name)  
+        Boolean findProfessor(string name) 
+        Arraylist<Class> getClasses 
+        Arraylist<Classroom> getClasssrooms
+        
         //Returns Optimally schedule of all classes & classrooms in the object    
-        list<string> scheduleClasses()  
+        Arraylist<string> scheduleClasses()  
+        
         //Gets all classes occurring in classroom  
-        list<Class> getClassesInClassroom(Classroom r)  
+        Arraylist<Class> getClassesInClassroom(Classroom r)  
+```
