@@ -7,21 +7,23 @@ The main program wil run in the Schedule class.
 
 Some Changes:  
 -From the initial proposal we got rid of student class.  
--We changed all sets to arrays from the initial submission of the outline.  
+-We changed all sets to ArraysLists from the initial submission of the outline.  
 -Got rid of addProfessor (Professor p) in the Schedule class as that should be something done within the Class class, because each class needs a professor.  
 -We changed find methods to return a boolean, true if class and professor are found, false otherwise.  
 -To Class we added compareTo method in order to sort(by finish time) and compatible method to see which other classes are not overlapping with it.  
 
 Standards:    
--Classroom are available 8am to 8pm   
--Classes are schedule on the hour, (ie. 8am, 9am, 10am, ..., 7pm, 8pm).    
--Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.       
+-Classroom are available 8am to 8pm.    
+-Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).   
+-Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).  
+-Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.
+        -ex: 8.5 is 8:30, 14:75 is 2:45
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).   
 
 By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
----------------------------------------Class---------------------------------------------   
+--------------------Class----------------------   
 ```
         —————Fields—————  
         department/subject: string  
@@ -36,7 +38,7 @@ Outline of Classes:
         boolean compatible(Class c)
  ```       
             
-----------------------------------------Classroom-------------------------------------------  
+--------------Classroom------------------------  
 ```
         —————Fields—————  
         building: string  
@@ -48,7 +50,7 @@ Outline of Classes:
         getters, initializer/constructor  
 ```
   
------------------------------------------Professor-------------------------------------------  
+-------------Professor------------------------  
 ```
         —————Fields—————  
         name: string  
@@ -59,7 +61,7 @@ Outline of Classes:
         getters, initializer/constructor  
 ```
   
-------------------------------------------Schedule-------------------------------------------- 
+---------------Schedule----------------------- 
 ```
         —————Fields—————  
         Classes: set <Class>  
