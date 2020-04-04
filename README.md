@@ -25,7 +25,7 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 -Class scheduling example: 8.5 is 8:30, 14:75 is 2:45, 17.25 is 5:15.   
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).     
 
-Outline of Classes:  
+## Outline of Classes:  
 --------------------Class----------------------   
 ```
         —————Fields—————  
