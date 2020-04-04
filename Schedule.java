@@ -37,11 +37,11 @@ public class Schedule{
     public ArrayList<Class> getClasses() {
         return classes;
     }
-    public ArrayList<Classroom> getClassroomset() {
+    public ArrayList<Classroom> getClassrooms() {
         return classrooms;
     }
     public ArrayList<Professor> getProfessors() {
-        ArrayList<Professor> profs;
+        ArrayList<Professor> profs = new ArrayList<Professor>();
         if (classes != null){
             for(Class c : classes){
                profs.add(c.getProf());
@@ -95,18 +95,18 @@ public class Schedule{
         //DO WHILE THERE IS NO CLASSES LEFT
         while(!classesCopy.isEmpty()){
             //Sort by finish time
-            Collections.sort(classes);
+            Collections.sort(classes, new sortByClass());
            
             //ArrayList of jobs selected--compatible with each other
             ArrayList<Class> selected = new ArrayList<Class>();
            
             //Put the first class in selected
-            selected.removeAll();
+            selected.removeAll(selected);
             selected.add(classes.get(0));
            
             //Find a set of compatible/non-overlapping classes
             for (int i=1; i<classes.size(); i++){      //Start at one since the first class has been selected
-                for(int j=0; j<scheduled.size(); j++){ //Make sure job is compatible w/ all jobs selected
+                for(int j=0; j<selected.size(); j++){ //Make sure job is compatible w/ all jobs selected
                      if (classes.get(i).compatible(selected.get(j))){
                          selected.add(classes.get(i));
                     }
@@ -118,23 +118,14 @@ public class Schedule{
                 classes.remove(c);
             }
             
+            //Increments the number of classrooms/ moves to scheduling the next set of classe for the next classroom
             if(indexClassrooms++ <= classrooms.size()){
                  //Put selected classes into a classroom
-                 this.classrooms(indexClassrooms).setClasses(selected);
+                 this.classrooms.get(indexClassrooms).setClasses(selected);
                  indexClassrooms++;
             }
         }
         
     }
-
-    //Gets all classes occurring in classroom
-    ArrayList<Class> getClassesInClassroom(Classroom r){ 
-        //TODO: ACTUALLY IMPLEMENT
-        //TODO: CASE IF CLASSROOM DOES NOT EXIST
-        //TODO: CASE IF THERE ARE NO CLASSES IN CLASSROOM
-        ArrayList<Class> inRoom = new list<Class>();
-        return inRoom;
-    }
-
 
 }
