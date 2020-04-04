@@ -1,9 +1,8 @@
 # CS205-Pair-Project-RG-SN
 CS 205 Software Engineering Pair Project: Classroom Scheduler
+By: Rachel Goldman and Stanhope Nwosu
 
-Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
-
-The main program wil run in the Schedule class. 
+Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classes and the availability of classrooms.
 
 ## Changes made for better encapsulation & functionailty:  
 -From the initial proposal we got rid of Student class (like we agreed upon).  
@@ -22,8 +21,6 @@ The main program wil run in the Schedule class.
 -Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.  
 -Class scheduling example: 8.5 is 8:30, 14:75 is 2:45, 17.25 is 5:15.   
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).     
-
-By: Rachel Goldman and Stanhope Nwosu
 
 Outline of Classes:  
 --------------------Class----------------------   
