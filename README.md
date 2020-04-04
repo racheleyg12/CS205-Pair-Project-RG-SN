@@ -12,7 +12,7 @@ Changes made for better encapsulation & functionailty:
 -We changed find methods in Schedule to return a boolean, to return true if class and professor are found, false otherwise.  
 -To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
 -To classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
--We changed availability to scheduled: boolean, which is true if classes are already scheduled in the classroom and false if not.   
+-We changed availabiliy to available: boolean, which is true if classes are already scheduled in the classroom and false if not.   
 
 Standards:    
 -Classroom are available 8am to 8pm.      
@@ -47,7 +47,7 @@ Outline of Classes:
         room number: string (ie. E204)   
         name: string (building + room number)  
         class capacity: int  
-        availability: double[]     //An array/list/or vector of time slots
+        available: boolean    
         classes: ArrayList<Class>
         —————Methods—————  
         getters, initializer/constructor  
