@@ -1,6 +1,6 @@
 # CS205-Pair-Project-RG-SN
 CS 205 Software Engineering Pair Project: Classroom Scheduler
-By: Rachel Goldman and Stanhope Nwosu
+By: Rachel Goldman and Stanhope Nwosu   
 
 Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classes and the availability of classrooms.
 
