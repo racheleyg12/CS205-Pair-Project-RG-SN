@@ -5,7 +5,7 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 
 The main program wil run in the Schedule class. 
 
-##Changes made for better encapsulation & functionailty:  
+## Changes made for better encapsulation & functionailty:  
 -From the initial proposal we got rid of Student class (like we agreed upon).  
 -We changed all Sets to ArraysLists from the initial submission of the outline.  
 -Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor needs to be part of a Class.    
@@ -15,7 +15,7 @@ The main program wil run in the Schedule class.
 -We changed availabiliy to available: boolean, which is true if classes are already scheduled in the classroom and false if not.   
 -In Schedule method ArrayList<Class> getClassesInClassroom(Classroom r) essentially has the same functionality as Arraylist<Classroom> getClasssrooms, so it was deleted.
 
-##Standards:    
+## Standards:    
 -Classroom are available 8am to 8pm.      
 -Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).     
 -Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).    
