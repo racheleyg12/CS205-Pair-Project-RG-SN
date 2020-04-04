@@ -13,6 +13,7 @@ Changes made for better encapsulation & functionailty:
 -To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
 -To classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
 -We changed availabiliy to available: boolean, which is true if classes are already scheduled in the classroom and false if not.   
+-In Schedule method ArrayList<Class> getClassesInClassroom(Classroom r) essentially has the same functionality as Arraylist<Classroom> getClasssrooms, so it was deleted.
 
 Standards:    
 -Classroom are available 8am to 8pm.      
@@ -82,7 +83,5 @@ Outline of Classes:
         
         //Returns Optimally schedule of all classes & classrooms in the object    
         Arraylist<String> scheduleClasses()  
-        
-        //Gets all classes occurring in classroom  
-        Arraylist<Class> getClassesInClassroom(Classroom r)  
+    
 ```
