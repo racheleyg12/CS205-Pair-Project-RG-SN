@@ -51,6 +51,13 @@ public class Class{
     public double[] getTime() {
         return time;
     }
+    //NEW CHANGE
+    public double getStartTime() {
+        return time[0];
+    }
+    public double getEndTime() {
+        return time[1];
+    }
     
     //compareTo compares the endtime
     public int compareTo(Class compareClass) {
@@ -65,7 +72,8 @@ public class Class{
     
     //compatible method makes sure classes do not overlap 
     public boolean compatible(Class otherClass){
-         if(otherClass.getTime()[0] > this.getTime()[1]){    //otherClass startime > this class's endtime
+         //otherClass start time < 
+         if(otherClass.getTime()[1] > this.time[0]){    //otherClass startime > this class's endtime
                return false;
          }
          return true;

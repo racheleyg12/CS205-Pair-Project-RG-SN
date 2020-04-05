@@ -96,31 +96,36 @@ public class Schedule{
         //DO WHILE THERE IS NO CLASSES LEFT
         while(!classesCopy.isEmpty()){
             //Sort by finish time
-            Collections.sort(classes, new sortByClass());
+            Collections.sort(classesCopy, new sortByClass());
            
-            //ArrayList of jobs selected--compatible with each other
+            //ArrayList of jobs selected--compatible with each other, makes a new selected each time
             ArrayList<Class> selected = new ArrayList<Class>();
            
-            //Put the first class in selected
-            selected.removeAll(selected);
-            selected.add(classes.get(0));
-           
+            //Adds first sorted class to selected 
+            selected.add(classesCopy.get(0));
+            
+            //If job is not overlapping with anyother job
+            boolean nonoverlapping = true;    
+                
             //Find a set of compatible/non-overlapping classes
-            for (int i=1; i<classes.size(); i++){      //Start at one since the first class has been selected
+            for (int i=0; i<classesCopy.size(); i++){      //Start at one since the first class has been selected
                 for(int j=0; j<selected.size(); j++){ //Make sure job is compatible w/ all jobs selected
-                     if (classes.get(i).compatible(selected.get(j))){
-                         selected.add(classes.get(i));
-                    }
+                     if (!classesCopy.get(i).compatible(selected.get(j))){
+                         nonoverlapping = false;
+                     }
+                }
+                if (nonoverlapping == true){
+                  selected.add(classesCopy.get(i));
                 }
             }
            
             //Delete selected classes
             for (Class c: selected){
-                classes.remove(c);
+                classesCopy.remove(c);
             }
             
             //Increments the number of classrooms/ moves to scheduling the next set of classe for the next classroom
-            if(indexClassrooms++ <= classrooms.size()){
+            if(indexClassrooms <= classrooms.size()){
                  //Makes classroom no longer available
                  this.classrooms.get(indexClassrooms).setAvailability(false);
                   
