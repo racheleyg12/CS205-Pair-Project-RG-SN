@@ -114,7 +114,7 @@ public class Schedule{
                          nonoverlapping = false;
                      }
                 }
-                if (nonoverlapping == true){
+                if (nonoverlapping){
                   selected.add(classesCopy.get(i));
                 }
             }
