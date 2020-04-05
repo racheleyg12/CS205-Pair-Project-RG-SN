@@ -5,25 +5,25 @@ public class Classroom {
    int roomNum;               //room number: string (ie. E204)
    String name;               //name: string (building + room number)
    int capcity;               //class capacity: int
-   double[] availability;     //availability: double[] //An array/list/or vector of time slots
+   boolean available;         //available if classes have been scheduled in classroom
    ArrayList<Class> classes;  //Classes held in classroom
    
    //Default Constructor
-      public Classroom(){
+   public Classroom(){
       building = "Innovation";
       roomNum = 204;
       name = "Innovation" + 204;
       capcity = 50;
-      availability = new double[9]; //9 hours
+      available = false;
    }
    
    //Constructor
-   public Classroom(String building, int room, int cap, double[] avail){
+   public Classroom(String building, int room, int cap, boolean avail){
       this.building = building;
       roomNum = room;
       name = building + " " + room;
       capcity = cap;
-      availability = avail;
+      available = avail;
    }
    //Setter - for setting correctly SCHEDULED classes in a classroom
    public void setClasses(ArrayList<Class> classes){
@@ -43,8 +43,8 @@ public class Classroom {
    public int getCapcity() {
         return this.capcity;
    }
-   public double[] getAvailability() {
-        return this.availability;
+   public boolean getAvailability() {
+        return this.available;
    }
    public ArrayList<Class> getClasses(){
       return this.classes;
