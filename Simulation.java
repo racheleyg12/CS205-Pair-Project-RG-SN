@@ -35,10 +35,14 @@ public class Simulation {
     //Adding Classrooms
     schedule.addClassroom(new Classroom("Votey", 205, 50, true));
     schedule.addClassroom(new Classroom("Votey", 207, 70, true));
-    
-
-    
-    
    
    }
-}
+
+   public static void main(String[] args) throws IOException { // main method to run simulation
+
+
+  }
+
+
+
+  }

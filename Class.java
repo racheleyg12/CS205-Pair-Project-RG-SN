@@ -69,7 +69,6 @@ public class Class{
                return false;
          }
          return true;
-    
     }
 
 }

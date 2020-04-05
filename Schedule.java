@@ -59,6 +59,7 @@ public class Schedule{
         }
         return false;
     }
+
     //Find Classroom
     public boolean findClassroom(String name){ 
         for (Classroom cr : classrooms) {
