@@ -20,9 +20,9 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 ## Standards for scheduling classes:    
 -Classroom are available 8am to 8pm.      
 -Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).     
--Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).    
+-Classes are schedule to the minute using a decimal (ie. .30 = 30min). (We did NOT want to make the decimal represent a percentage of an hour, or we get weird fractions that would covert well to minutes).     
 -Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.  
--Class scheduling example: 8.5 is 8:30, 14:75 is 2:45, 17.25 is 5:15.   
+-Class scheduling example: 8.30 is 8:30, 14:45 is 2:45, 17.15 is 5:15.   
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).     
 
 ## Outline of Classes:  
