@@ -120,9 +120,13 @@ public class Schedule{
             
             //Increments the number of classrooms/ moves to scheduling the next set of classe for the next classroom
             if(indexClassrooms++ <= classrooms.size()){
+                 //Makes classroom no longer available
+                 this.classrooms.get(indexClassrooms).setAvailability(false);
+                  
                  //Put selected classes into a classroom
                  this.classrooms.get(indexClassrooms).setClasses(selected);
                  indexClassrooms++;
+               
             }
         }
         

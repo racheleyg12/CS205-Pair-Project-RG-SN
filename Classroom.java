@@ -25,9 +25,12 @@ public class Classroom {
       capcity = cap;
       available = avail;
    }
-   //Setter - for setting correctly SCHEDULED classes in a classroom
+   //Setter - for setting correctly SCHEDULED classes in a classroom & say if classes are scheduled in classroom or not
    public void setClasses(ArrayList<Class> classes){
       this.classes = classes;
+   }
+   public void setAvailability(boolean available) {
+        this.available = available;
    }
    
    //Getters
