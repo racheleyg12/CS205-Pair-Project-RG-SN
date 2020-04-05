@@ -20,8 +20,43 @@ public class ScheduleTests{
    private static Class cs021;
    private static Class cs110;
    private static Class cs124;
-   
+
+   //@BeforeClass
+   public static void setUp(){ //init everything
+      String c = "CS";
+      double[] timing;
+      Professor rob = new Professor();
+      Professor lisa = new Professor("Lisa", c ,"Innovation 243E", "lisa@uvm.edu");
+      Professor jim = new Professor("James", c ,"Innovation E309","James.Eddy@uvm.edu");
+      Professor jackie = new Professor("Jackie", c ,"Innovation E318","	Jackie.Horton@uvm.edu");
+      Professor jason = new Professor("Jason", c ,"Innovation E315","Jason.Hibbeler@uvm.edu");
+
+      schedule = new Schedule();
+      votey205 = new Classroom("Votey", 207, 25, true);
+      votey207 = new Classroom("Votey", 205, 25, true);
 
 
+      timing[0] = 8.30;
+      timing[1] = 9.20;
+      cs008 = new Class(c, "Intro to Website Dev", rob, new ArrayList<Class>(), timing);
 
+      timing[0] = 10.15;
+      timing[1] = 11.20;
+      cs020 = new Class(c, "Intro to Python: Green", lisa, new ArrayList<Class>(), timing);
+
+
+      cs021 = ;
+      cs110 = ;
+      cs124 = ;
+   }
+
+   //@After
+   public void tearDown(){
+
+   }
+
+   //@Tests
+   public void testOne(){
+
+   }
 }
