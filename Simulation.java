@@ -33,7 +33,10 @@ public class Simulation {
        //Adding Classrooms
        schedule.addClassroom(new Classroom("Votey", 205, 50, true));
        schedule.addClassroom(new Classroom("Votey", 207, 70, true));
+       schedule.addClassroom(new Classroom("Votey", 209, 70, true));
+       schedule.addClassroom(new Classroom("Innovation", 204, 70, true));
        
+       //Scheduling Classes in Classrooms
        schedule.scheduleClasses();
    
     }
