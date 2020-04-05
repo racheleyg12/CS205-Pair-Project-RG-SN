@@ -9,7 +9,7 @@ public class Class{
     Professor prof;                    //professor: Professor
     int capactiy;                      //class capacity: int
     ArrayList<Class> preReq;           //prerequisite course(s): set <Class>
-    double[] time = new double[2];     //Start time & end time
+    double[] time;                     //Start time & end time
     
 
     //Default Constructor
