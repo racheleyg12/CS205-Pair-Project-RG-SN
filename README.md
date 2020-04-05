@@ -51,7 +51,9 @@ Making a classroom scheduler that will optimally schedule classes --using least 
         available: boolean    
         classes: ArrayList<Class>
         —————Methods—————  
-        getters, initializer/constructor  
+        getters, initializer/constructor
+        void setClasses(ArrayList<Class> classes)
+        void setAvailability(boolean available)
 ```
   
 -----------------Professor--------------------  
