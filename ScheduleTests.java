@@ -27,7 +27,7 @@ public class ScheduleTests{
       double[] timing = {0, 0};
       ArrayList<Class> reqCS = new ArrayList<Class>();
       ArrayList<Class> reqSTAT = new ArrayList<Class>();
-      schedule = new Schedule();
+      //schedule = new Schedule();
       // All Professors
       Professor rob = new Professor();
       Professor lisa = new Professor("Lisa", c ,"Innovation 243E", "lisa@uvm.edu");
@@ -41,6 +41,7 @@ public class ScheduleTests{
       kalkin325 = new Classroom("Kalkin", 325, 30, true);
       kalkin103 = new Classroom("Kalkin", 103, 50, false);
 
+      // Classes
       timing[0] = 8.30;
       timing[1] = 9.20;
       cs008 = new Class(c, "Intro to Website Dev", rob, 30, new ArrayList<Class>(), timing);
@@ -80,15 +81,28 @@ public class ScheduleTests{
 
    //@Tests
    public void testOne(){
-      schedule.addClassroom(votey207);
-      schedule.addClassroom(votey205);
-      schedule.addClassroom(kalkin325);
-
+      // First schedule
+      Schedule schedule1 = new Schedule();
+      // Adding classrooms
+      schedule1.addClassroom(votey207);
+      schedule1.addClassroom(votey205);
+      schedule1.addClassroom(kalkin325);
+      // Check number of Professors before adding classes
+      ArrayList<Professor> professors = schedule1.getProfessors();
+      Assert.assertEquals(professors.size(), 0);
+      // Adding Classes
       schedule.addClass(cs008);
       schedule.addClass(cs021);
       schedule.addClass(stat095);
+      // Total number of professors after adding classes
+      ArrayList<Professor> professors = schedule.getProfessors();
+      Assert.assertEquals(professors.size(), 2);
 
-      Asert.ass
+      schedule1.scheduleClasses();
+   }
+
+   public void testTwo(){
+
    }
 
 
