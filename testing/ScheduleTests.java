@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Test;
 //import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matcher.*;
+import class Class;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -42,12 +43,12 @@ public class ScheduleTests{
 
       timing[0] = 10.15;
       timing[1] = 11.20;
-      cs020 = new Class(c, "Intro to Python: Green", lisa, new ArrayList<Class>(), timing);
+      cs020 = new Class(c, "Intro to Python: Green", lisa, 25, new ArrayList<Class>(), timing);
 
 
-      cs021 = ;
-      cs110 = ;
-      cs124 = ;
+      // cs021 = ;
+//       cs110 = ;
+//       cs124 = ;
    }
 
    //@After
