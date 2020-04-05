@@ -1,21 +1,23 @@
 # CS205-Pair-Project-RG-SN
-CS 205 Software Engineering Pair Project: Classroom Scheduler
+CS 205 Software Engineering Pair Project: Classroom Scheduler  
+By: Rachel Goldman and Stanhope Nwosu   
 
-Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classe and the availability of classrooms.
+Making a classroom scheduler that will optimally schedule classes --using least amount of classrooms. It will schedule classes in classrooms base on the time of the classes and the availability of classrooms.
 
-The main program wil run in the Schedule class. 
-
-Changes made for better encapsulation & functionailty:  
+## Changes made for better encapsulation & functionailty:  
 -From the initial proposal we got rid of Student class (like we agreed upon).  
 -We changed all Sets to ArraysLists from the initial submission of the outline.  
--Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor needs to be part of a Class.    
+-Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor is not a field in Schedule and if a field in Class, where it already has it's own add method.    
 -We changed find methods in Schedule to return a boolean, to return true if class and professor are found, false otherwise.  
--To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
--To classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
+-To Classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
 -We changed availabiliy to available: boolean, which is true if classes are already scheduled in the classroom and false if not.   
--In Schedule method ArrayList<Class> getClassesInClassroom(Classroom r) essentially has the same functionality as Arraylist<Classroom> getClasssrooms, so it was deleted.
+-In Schedule method ArrayList<Class> getClassesInClassroom(Classroom r) essentially has the same functionality as Arraylist<Classroom> getClasssrooms, so it was deleted.   
+-To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
+-Added class is SortByClass which implements Comparator, its only function we use is ```int compare(Class a, Class b)``` in
+```Collections.sort(classes, new sortByClass());``` to sort the classes in order of finish time.   
 
-Standards:    
+
+## Standards:    
 -Classroom are available 8am to 8pm.      
 -Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).     
 -Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).    
@@ -23,9 +25,7 @@ Standards:
 -Class scheduling example: 8.5 is 8:30, 14:75 is 2:45, 17.25 is 5:15.   
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).     
 
-By: Rachel Goldman and Stanhope Nwosu
-
-Outline of Classes:  
+## Outline of Classes:  
 --------------------Class----------------------   
 ```
         —————Fields—————  
