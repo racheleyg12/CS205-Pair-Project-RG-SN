@@ -108,7 +108,8 @@ public class Schedule{
             boolean nonoverlapping = true;    
                 
             //Find a set of compatible/non-overlapping classes
-            for (int i=0; i<classesCopy.size(); i++){      //Start at one since the first class has been selected
+            for (int i=0; i<classesCopy.size(); i++){      
+                nonoverlapping = true;
                 for(int j=0; j<selected.size(); j++){ //Make sure job is compatible w/ all jobs selected
                      if (!classesCopy.get(i).compatible(selected.get(j))){
                          nonoverlapping = false;
@@ -134,6 +135,22 @@ public class Schedule{
                  indexClassrooms++;
                
             }
+        }
+        
+        //Print out schedule 
+        System.out.println("Optimal Amount of Classrooms used for Classes Scheduled:");
+        for(Classroom cr : classrooms){
+            System.out.printf(cr.getName() + ":  ");
+            if (cr.getClasses() != null){
+               for (Class cl : cr.getClasses()){
+                  System.out.printf("%-30s", cl.getName());
+                  System.out.printf("[%5.2f %5.2f]  ", cl.getTime()[0], cl.getTime()[1]);
+               }
+               System.out.printf("\n");
+            } else {
+               System.out.printf("No classes scheduled in classroom\n");
+            }
+           
         }
         
     }
