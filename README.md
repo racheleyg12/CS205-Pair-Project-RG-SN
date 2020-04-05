@@ -7,7 +7,7 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 ## Changes made for better encapsulation & functionailty:  
 -From the initial proposal we got rid of Student class (like we agreed upon).  
 -We changed all Sets to ArraysLists from the initial submission of the outline.  
--Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor is not a field in Schedule and if a field in Class, where it already has it's own add method.    
+-Got rid of addProfessor (Professor p) in Schedule as it didn't make sense since a Professor is not a field in Schedule and is a field in Class, where it already has it's own add method.    
 -We changed find methods in Schedule to return a boolean, to return true if class and professor are found, false otherwise.  
 -To Classroom we added a new field classes: ```ArrayList<Class>``` as a classroom would contain a schedule of classes. 
 -We changed availabiliy to available: boolean, which is true if classes are already scheduled in the classroom and false if not.   
@@ -15,14 +15,15 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 -To Class we added compareTo method in order to sort (by finish time) and compatible method to see which other classes are not overlapping with it to schedule classes correctly.  
 -Added class is SortByClass which implements Comparator, its only function we use is ```int compare(Class a, Class b)``` in
 ```Collections.sort(classes, new sortByClass());``` to sort the classes in order of finish time.   
+-Changed ```Arraylist<String> scheduleClasses()``` to ```void scheduleClasses()``` as when it schedules all the classes it will put it back into the classrooms.
 
 
 ## Standards for scheduling classes:    
 -Classroom are available 8am to 8pm.      
 -Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).     
--Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).    
+-Classes are schedule to the minute using a decimal (ie. .30 = 30min). (We did NOT want to make the decimal represent a percentage of an hour, or we get weird fractions that would covert well to minutes).     
 -Classes are scheduled in military time/24 hour clock (from 8 to 20), but will be printed in 12 hour clock time.  
--Class scheduling example: 8.5 is 8:30, 14:75 is 2:45, 17.25 is 5:15.   
+-Class scheduling example: 8.30 is 8:30, 14:45 is 2:45, 17.15 is 5:15.   
 -Not all classrooms may be used, this program is designed to used the fewest classroom for all scheduled classroom (ie. optimizing the amount of classrooms needed to be used).     
 
 ## Outline of Classes:  
@@ -84,6 +85,6 @@ Making a classroom scheduler that will optimally schedule classes --using least 
         Arraylist<Professor> getProfessors
         
         //Returns Optimally schedule of all classes & classrooms in the object    
-        Arraylist<String> scheduleClasses()  
+        void scheduleClasses()  
     
 ```
