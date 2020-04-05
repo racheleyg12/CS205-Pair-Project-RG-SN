@@ -17,7 +17,7 @@ Making a classroom scheduler that will optimally schedule classes --using least 
 ```Collections.sort(classes, new sortByClass());``` to sort the classes in order of finish time.   
 
 
-## Standards:    
+## Standards for scheduling classes:    
 -Classroom are available 8am to 8pm.      
 -Classes are schedule using an integer for the hour (ie. 8am, 9am, 10am, ..., 7pm, 8pm).     
 -Classes are schedule to the minute using a decimal/percentage of an hour (ie. .5 = 30min).    
@@ -51,7 +51,9 @@ Making a classroom scheduler that will optimally schedule classes --using least 
         available: boolean    
         classes: ArrayList<Class>
         —————Methods—————  
-        getters, initializer/constructor  
+        getters, initializer/constructor
+        void setClasses(ArrayList<Class> classes)
+        void setAvailability(boolean available)
 ```
   
 -----------------Professor--------------------  
