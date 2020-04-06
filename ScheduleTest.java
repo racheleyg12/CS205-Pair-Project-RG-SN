@@ -167,9 +167,9 @@ public class ScheduleTest {
       
       //Check findClassroom(String name)
       // Find classroom not in schedule
-      Assert.assertFalse(schedule.findClassroom("Kalkin 325"));
+      Assert.assertFalse(schedule.findClassroom("Kalkin", "325"));
       // Find classroom in schedule
-      Assert.assertFalse(schedule.findClassroom("Votey 207"));
+      Assert.assertFalse(schedule.findClassroom("Votey", "207"));
       
       //Check findProfessor(String name)
       Assert.assertTrue(schedule.findProfessor("James Eddy"));
