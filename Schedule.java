@@ -61,13 +61,11 @@ public class Schedule{
     }
 
     //Find Classroom
-    public boolean findClassroom(String b, String rm){
+    public boolean findClassroom(String name){
         for (Classroom cr : classrooms) {
-            if(cr.building == b){ // checking by name (building + room)
-                if(cr.room == rm) {
-                    return true;
-                }
-            }
+            if(cr.getName() == name){
+               return true;
+            }    
         }
         return false;
     }

@@ -167,9 +167,9 @@ public class ScheduleTest {
       
       //Check findClassroom(String name)
       // Find classroom not in schedule
-      Assert.assertFalse(schedule.findClassroom("Kalkin", "325"));
+      Assert.assertFalse(schedule.findClassroom("Kalkin 325"));
       // Find classroom in schedule
-      Assert.assertFalse(schedule.findClassroom("Votey", "207"));
+      Assert.assertFalse(schedule.findClassroom("Votey 207"));
       
       //Check findProfessor(String name)
       Assert.assertTrue(schedule.findProfessor("James Eddy"));
@@ -203,6 +203,12 @@ public class ScheduleTest {
       //votey205 should NOT be availble
       Assert.assertFalse(votey205.getAvailability());
       
+      //votey207 should NOT be availble
+      Assert.assertFalse(votey207.getAvailability());
+      
+      //votey209 should NOT be availble
+      Assert.assertFalse(votey209.getAvailability());
+      
       //innovation204 should be availble
       Assert.assertTrue(innovation204.getAvailability());
       
@@ -211,8 +217,56 @@ public class ScheduleTest {
       classScheduled.add(cs008);
       classScheduled.add(cs201);
       classScheduled.add(cs021);
-      Assert.assertEquals(votey205.getClasses(), classScheduled);
-     
+      Assert.assertEquals(votey205.getClasses(), classScheduled); 
+      
+      //Times should not overlap in votey205
+      System.out.println("No two class times in any classroom should overlap:");
+      for(Class c :  votey205.getClasses()){
+         System.out.printf("%-30s [%5.2f %5.2f] \n", c.getName(), c.getTime()[0], c.getTime()[1]);
+      }
+
    }
+   
+   //Make sure classes & classroom are add correctly after initialization  by ArrayList option//
+   @Test public void test5() {
+      //Adding two classes using ArrayList<Class>
+      ArrayList<Class> classSet = new ArrayList<Class>(); 
+      classSet.add(cs110);
+      classSet.add(cs120);
+      
+      //Adding two classes using ArrayList<Class>
+      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
+      roomSet.add(votey205);
+      roomSet.add(votey207);
+
+      //To test arguments
+      Schedule schedule = new Schedule(classSet, roomSet);
+      
+      //Adding more classes
+      schedule.addClass(cs201);
+      schedule.addClass(cs205);
+       
+      //Adding more classrooms
+      schedule.addClassroom(votey207);
+      schedule.addClassroom(innovation204);
+      
+      //Check the correct number of classes added
+      Assert.assertEquals(schedule.getClasses().size(), 4);
+      
+      //Check classes added
+      Assert.assertNotNull(schedule.getClasses()); 
+      
+      //Check the correct number of classrooms added
+      Assert.assertEquals(schedule.getClassrooms().size(), 4);
+      
+      //Check classrooms added
+      Assert.assertNotNull(schedule.getClassrooms());
+      
+      //Check all classrooms are available, as nothing has been scheduled
+      for(Classroom c: schedule.getClassrooms()){
+         Assert.assertTrue(c.getAvailability());
+      }            
+   }
+
 }
 
