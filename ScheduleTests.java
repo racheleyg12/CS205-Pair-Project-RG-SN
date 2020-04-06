@@ -128,13 +128,21 @@ public class ScheduleTests{
       Assert.assertTrue(f1);
       // Find classroom not in schedule
       boolean f4 = schedule2.findClassroom("Innovation 204");
-      Assert.assert(f4);
+      Assert.assertFalse(f4);
 
+      schedule2.scheduleClasses();
+      // Trying find cases after scheduling
+      f1 = schedule2.findProfessor("Heather");
+      Assert.assertFalse(f1);
 
+      f2 = schedule2.findClass("Intro to Psychology");
+      Assert.assertFalse(f1);
 
+      f3 = schedule2.findClass("Intro to Stat");
+      Assert.assertTrue(f1);
 
-
-
+      f4 = schedule2.findClassroom("Innovation 204");
+      Assert.assertFalse(f4);
    }
 
 
