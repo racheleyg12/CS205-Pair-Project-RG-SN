@@ -51,14 +51,7 @@ public class Class{
     public double[] getTime() {
         return time;
     }
-    //NEW CHANGE
-    public double getStartTime() {
-        return time[0];
-    }
-    public double getEndTime() {
-        return time[1];
-    }
-    
+        
     //compareTo compares the endtime
     public int compareTo(Class compareClass) {
         if (this.time[1] < compareClass.getTime()[1]){
