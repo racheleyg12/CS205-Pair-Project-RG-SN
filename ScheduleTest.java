@@ -127,7 +127,7 @@ public class ScheduleTest {
    }
    
    //Make sure //
-   @Test public void test3() { // after first two tests
+   @Test public void test3() { // after either test1 or test2 two tests
       //To test finds
 
       // Find Professor not in schedule
