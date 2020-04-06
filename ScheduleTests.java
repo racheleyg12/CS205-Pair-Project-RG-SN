@@ -78,11 +78,6 @@ public class ScheduleTests{
       stat141 = new Class("STAT", "Advanced Stat Methods", jim, 35, req, timing);
    }
 
-   //@After
-   public void tearDown(){// Ending: Jason's library has list of checkouts
-
-   }
-
    //@Tests
    public void testOne(){
       // 1st schedule
