@@ -26,11 +26,11 @@ public class Schedule{
     //Methods
     //add Class
     public void addClass(Class c){
-         classes.add(c);
+        this.classes.add(c);
     }
     //add Classroom
     public void addClassroom(Classroom r){
-        classrooms.add(r);
+        this.classrooms.add(r);
     }
  
     //Getters
