@@ -140,5 +140,9 @@ public class ScheduleTests{
       Assert.assertFalse(f4);
    }
 
+   public void testThree(){// Open to ideas
+
+   }
+
 
 }
