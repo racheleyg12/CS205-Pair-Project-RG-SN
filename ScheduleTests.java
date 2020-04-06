@@ -106,7 +106,6 @@ public class ScheduleTests{
    }
 
    public void testTwo(){
-
       Array<Class> classSet2 = new Array<Class>();
       classSet2.add(cs110);
       classSet2.add(cs124);
@@ -119,11 +118,18 @@ public class ScheduleTests{
       // 2nd schedule made with arguments
       Schedule schedule2 = new Schedule(classSet2, roomSet2);
       // Find professor not in schedule
-      schedule2.findProfessor("Heather");
-      // Find class not in schedule doesnt
-      schedule2.findClass("Intro to Psychology");
-      // Find class in schedule doesnt
-      schedule2.findClass("Intro to Stat");
+      boolean f1 = schedule2.findProfessor("Heather");
+      Assert.assertFalse(f1);
+      // Find class not in schedule
+      boolean f2 = schedule2.findClass("Intro to Psychology");
+      Assert.assertFalse(f1);
+      // Find class in schedule
+      boolean f3 = schedule2.findClass("Intro to Stat");
+      Assert.assertTrue(f1);
+      // Find classroom not in schedule
+      boolean f4 = schedule2.findClassroom("Innovation 204");
+      Assert.assert(f4);
+
 
 
 
