@@ -15,11 +15,15 @@ public class ScheduleTests{
    private static Schedule schedule;
    private static Classroom votey207;
    private static Classroom votey205;
+   private static Classroom kalkin103;
+   private static Classroom kalkin325;
    private static Class cs008;
    private static Class cs020;
    private static Class cs021;
    private static Class cs110;
    private static Class cs124;
+   private static Class stat095;
+   private static Class stat141;
 
    //@BeforeClass
    public static void setUp(){ //init everything
@@ -81,7 +85,7 @@ public class ScheduleTests{
 
    //@Tests
    public void testOne(){
-      // First schedule
+      // 1st schedule
       Schedule schedule1 = new Schedule();
       // Adding classrooms
       schedule1.addClassroom(votey207);
@@ -102,6 +106,28 @@ public class ScheduleTests{
    }
 
    public void testTwo(){
+
+      Array<Class> classSet2 = new Array<Class>();
+      classSet2.add(cs110);
+      classSet2.add(cs124);
+      classSet2.ads(cs008);
+      classSet2.ads(stat095);
+      Array<Classroom> roomSet2 = new Array<Classroom>();
+      roomSet2.add(kalkin103);
+      roomSet2.add(votey207);
+      roomSet2.add(kalkin325);
+      // 2nd schedule made with arguments
+      Schedule schedule2 = new Schedule(classSet2, roomSet2);
+      // Find professor not in schedule
+      schedule2.findProfessor("Heather");
+      // Find class not in schedule doesnt
+      schedule2.findClass("Intro to Psychology");
+      // Find class in schedule doesnt
+      schedule2.findClass("Intro to Stat");
+
+
+
+
 
    }
 
