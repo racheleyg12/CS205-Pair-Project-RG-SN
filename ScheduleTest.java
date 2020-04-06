@@ -69,12 +69,12 @@ public class ScheduleTest {
       double[] classTime6 = {10.15, 11.05};
       prereq = new ArrayList<Class>();
       prereq.add(new Class("CS", "CS120 Adv Programming: C++",lisa , 40, new ArrayList<Class>(), prereqTime));
-      cs205 = new Class("CS", "CS205 Software Engineering",jason , 40, new ArrayList<Class>(), classTime6);   
+      cs205 = new Class("CS", "CS205 Software Engineering",jason , 40, new ArrayList<Class>(), classTime6);      
    }
 
 
-   //Make sure classes & classroom are initialized correctly//
-   @Test public void defaultTest() {
+   //Make sure classes & classroom are added correctly//
+   @Test public void test1() {
       //Adding two classrooms
       schedule.addClassroom(votey207);
       schedule.addClassroom(votey205);
@@ -100,9 +100,41 @@ public class ScheduleTest {
       //Check all classrooms are available, as nothing has been scheduled
       for(Classroom c: schedule.getClassrooms()){
          Assert.assertTrue(c.getAvailability());
-      }
+      }   
+   }
+   
+   //Make sure classes & classroom are initialized correctly by ArrayList option//
+   @Test public void test2() {
+      //Adding 3 classes using ArrayList<Class>
+      ArrayList<Class> classSet = new ArrayList<Class>(); 
+      classSet.add(cs110);
+      classSet.add(cs120);
+      classSet.add(cs008);
+      //Adding 3 classes using ArrayList<Class>
+      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
+      roomSet.add(votey205);
+      roomSet.add(votey207);
+      roomSet.add(votey209);
+
+      //To test arguments
+      Schedule schedule = new Schedule(classSet, roomSet);
       
+      //Test adding classSet works
+      Assert.assertEquals(classSet, schedule.getClasses());
+      
+      //Test adding roomSet works
+      Assert.assertEquals(roomSet, schedule.getClassrooms());      
+   }
+   
+   //Make sure //
+   @Test public void test3() {
+      
+      
+      //To test arguments
+      //Schedule schedule2 = new Schedule(classSet, roomSet);
+  
       
    }
+
 }
 
