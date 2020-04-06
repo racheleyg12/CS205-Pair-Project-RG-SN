@@ -128,10 +128,11 @@ public class ScheduleTest {
    
    //Make sure //
    @Test public void test3() {
-      
-      
       //To test arguments
+      ArrayList<Class> classSet = new ArrayList<Class>();
+      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
       //Schedule schedule2 = new Schedule(classSet, roomSet);
+      classSet.add();
   
       
    }
