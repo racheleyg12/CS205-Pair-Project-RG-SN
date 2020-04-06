@@ -20,6 +20,12 @@ public class ScheduleTest {
    private static Class cs120;
    private static Class cs201;
    private static Class cs205;
+   private static Professor bob;
+   private static Professor jim;
+   private static Professor jackie;
+   private static Professor lisa;
+   private static Professor jason;
+   
 
    /** Fixture initialization (common initialization
     *  for all tests). **/
@@ -34,11 +40,11 @@ public class ScheduleTest {
       innovation204 = new Classroom("Innovation", 204, 50, true);
       
       //Making Professors
-      Professor bob = new Professor("Robert Erickson","CS","Innovation E304","rerickso@uvm.edu");
-      Professor jim = new Professor("James Eddy","CS","Innovation E309","	James.Eddy@uvm.edu");
-      Professor jackie = new Professor("Jackie Horton","CS","Innovation E318","	Jackie.Horton@uvm.edu");
-      Professor lisa = new Professor("Lisa Dion","CS","Innovation E314","	Lisa.Dion@uvm.edu");
-      Professor jason = new Professor("Jason Hibbeler","CS","Innovation E315","Jason.Hibbeler@uvm.edu");
+      bob = new Professor("Robert Erickson","CS","Innovation E304","rerickso@uvm.edu");
+      jim = new Professor("James Eddy","CS","Innovation E309","	James.Eddy@uvm.edu");
+      jackie = new Professor("Jackie Horton","CS","Innovation E318","	Jackie.Horton@uvm.edu");
+      lisa = new Professor("Lisa Dion","CS","Innovation E314","	Lisa.Dion@uvm.edu");
+      jason = new Professor("Jason Hibbeler","CS","Innovation E315","Jason.Hibbeler@uvm.edu");
       
       //prereq do not require a time
       double[] prereqTime = {0, 0};
@@ -126,24 +132,87 @@ public class ScheduleTest {
       Assert.assertEquals(roomSet, schedule.getClassrooms());      
    }
    
-   //Make sure //
-   @Test public void test3() { // after either test1 or test2 two tests
-      //To test finds
-
-      // Find Professor not in schedule
-      Assert.assertFalse(schedule.findProfessor("Heather"));
-      // Find Professor in schedule
-      Assert.assertFalse(schedule.findProfessor("Robert Erickson"));
+   
+   //Make sure Schedule methods work except scheduleClasses()//
+   @Test public void test3() {
+      //Adding 3 classes using ArrayList<Class>
+      ArrayList<Class> classSet = new ArrayList<Class>(); 
+      classSet.add(cs201);
+      classSet.add(cs120);
+      classSet.add(cs021);
+      //Adding 3 classes using ArrayList<Class>
+      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
+      roomSet.add(votey205);
+      roomSet.add(votey207);
+      roomSet.add(innovation204);
+      
+      //To test methods
+      Schedule schedule = new Schedule(classSet, roomSet);
+      
+      //Check getProfessors()
+      //Professors should be cs201-jason, cs120-lisa, cs021-jim
+      ArrayList<Professor> profs = new ArrayList<Professor>();
+      profs.add(jason);
+      profs.add(lisa);
+      profs.add(jim);
+      Assert.assertEquals(schedule.getProfessors(), profs);
+      //Check the correct amount
+      Assert.assertEquals(schedule.getProfessors().size(), 3);
+      
+      //Check findClass(String name)
+      Assert.assertTrue(schedule.findClass("CS021 Cmptr Programming I"));
       // Find class not in schedule
       Assert.assertFalse(schedule.findClass("Intro to Psychology"));
-      // Find class in schedule
-      Assert.assertTrue(schedule.findClass("Intro to Stat"));
+
+      
+      //Check findClassroom(String name)
       // Find classroom not in schedule
       Assert.assertFalse(schedule.findClassroom("Kalkin 325"));
       // Find classroom in schedule
       Assert.assertFalse(schedule.findClassroom("Votey 207"));
       
+      //Check findProfessor(String name)
+      Assert.assertTrue(schedule.findProfessor("James Eddy"));
+      // Find Professor not in schedule
+      Assert.assertFalse(schedule.findProfessor("Heather"));   
    }
-
+      
+   //Make sure Schedule scheduleClasses() work//
+   @Test public void test4() {
+      //Adding 5 classes using ArrayList<Class>
+      ArrayList<Class> classSet = new ArrayList<Class>(); 
+      classSet.add(cs008);
+      classSet.add(cs021);
+      classSet.add(cs110);
+      classSet.add(cs120);
+      classSet.add(cs201);
+      classSet.add(cs205);
+      
+      //Adding 4 classes using ArrayList<Class>
+      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
+      roomSet.add(votey205);
+      roomSet.add(votey207);
+      roomSet.add(votey209);
+      roomSet.add(innovation204);
+      
+      //To test scheduleClasses()
+      Schedule schedule = new Schedule(classSet, roomSet);
+      schedule.scheduleClasses();
+      
+      //Checks avability
+      //votey205 should NOT be availble
+      Assert.assertFalse(votey205.getAvailability());
+      
+      //innovation204 should be availble
+      Assert.assertTrue(innovation204.getAvailability());
+      
+      //Check classes scheduled in votey205
+      ArrayList<Class> classScheduled = new ArrayList<Class>();
+      classScheduled.add(cs008);
+      classScheduled.add(cs201);
+      classScheduled.add(cs021);
+      Assert.assertEquals(votey205.getClasses(), classScheduled);
+     
+   }
 }
 
