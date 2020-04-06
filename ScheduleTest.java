@@ -127,13 +127,21 @@ public class ScheduleTest {
    }
    
    //Make sure //
-   @Test public void test3() {
-      //To test arguments
-      ArrayList<Class> classSet = new ArrayList<Class>();
-      ArrayList<Classroom> roomSet = new ArrayList<Classroom>();
-      //Schedule schedule2 = new Schedule(classSet, roomSet);
-      classSet.add();
-  
+   @Test public void test3() { // after first two tests
+      //To test finds
+
+      // Find Professor not in schedule
+      boolean f1 = schedule.findProfessor("Heather");
+      Assert.assertFalse(f1);
+      // Find class not in schedule
+      boolean f2 = schedule.findClass("Intro to Psychology");
+      Assert.assertFalse(f2);
+      // Find class in schedule
+      boolean f3 = schedule.findClass("Intro to Stat");
+      Assert.assertTrue(f3);
+      // Find classroom not in schedule
+      boolean f4 = schedule.findClassroom("Innovation 204");
+      Assert.assertFalse(f4);
       
    }
 
