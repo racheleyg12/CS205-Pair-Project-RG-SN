@@ -129,8 +129,21 @@ public class Schedule{
             
             //Increments the number of classrooms/ moves to scheduling the next set of classe for the next classroom
             if(indexClassrooms <= classrooms.size()){
-                 //Makes classroom no longer available
-                 this.classrooms.get(indexClassrooms).setAvailability(false);
+                 //Checks Capacity
+                 boolean capacityCheck = true;
+                 for (Class c: selected){
+                     if (c.getCapacity() > this.classrooms.get(indexClassrooms).getCapacity()){
+                        capacityCheck = false;
+                     } else if (c.getCapacity() == this.classrooms.get(indexClassrooms).getCapacity()){
+                        capacityCheck = true;
+                     }
+                 }
+ 
+                 //First checks Availability 
+                 if (this.classrooms.get(indexClassrooms).getAvailability() && capacityCheck){
+                    //Makes classroom no longer available
+                    this.classrooms.get(indexClassrooms).setAvailability(false);
+                 }
                   
                  //Put selected classes into a classroom
                  this.classrooms.get(indexClassrooms).setClasses(selected);

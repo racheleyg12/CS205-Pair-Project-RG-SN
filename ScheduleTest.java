@@ -59,7 +59,7 @@ public class ScheduleTest {
       double[] classTime3 = {14.15, 15.30};
       ArrayList<Class> prereq = new ArrayList<Class>();
       prereq.add(new Class("CS", "CS021 Cmptr Programming I:",jim , 20, new ArrayList<Class>(), prereqTime));
-      cs110 = new Class("CS", "CS110 Intmd Programming-Java",jackie , 70, new ArrayList<Class>(), classTime3);
+      cs110 = new Class("CS", "CS110 Intmd Programming-Java",jackie , 50, new ArrayList<Class>(), classTime3);
        
       prereq = new ArrayList<Class>();
       prereq.add(new Class("CS", "CS124 Data Struc & Algorithms ",lisa , 20, new ArrayList<Class>(), prereqTime));
@@ -220,9 +220,19 @@ public class ScheduleTest {
       Assert.assertEquals(votey205.getClasses(), classScheduled); 
       
       //Times should not overlap in votey205
+      System.out.printf("\n");
       System.out.println("No two class times in any classroom should overlap:");
+      System.out.printf("The classes in Votey 205: \n");
       for(Class c :  votey205.getClasses()){
          System.out.printf("%-30s [%5.2f %5.2f] \n", c.getName(), c.getTime()[0], c.getTime()[1]);
+      }
+      
+      //Capacities should checkout
+      System.out.printf("\n");
+      System.out.printf("The capacity of Votey 205: " + votey205.getCapacity() + "\n");
+      System.out.printf("The capacity of Classes in Votey 205: \n");
+      for(Class c :  votey205.getClasses()){
+         System.out.printf("%-30s %2d \n", c.getName(), c.getCapacity());
       }
 
    }

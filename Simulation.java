@@ -22,7 +22,7 @@ public class Simulation {
        double[] classTime3 = {14.15, 15.30};
        ArrayList<Class> prereq = new ArrayList<Class>();
        prereq.add(new Class("CS", "CS021 Cmptr Programming I:",jim , 20, new ArrayList<Class>(), prereqTime));
-       schedule.addClass(new Class("CS", "CS110 Intmd Programming-Java",jackie , 70, new ArrayList<Class>(), classTime3));
+       schedule.addClass(new Class("CS", "CS110 Intmd Programming-Java",jackie , 50, new ArrayList<Class>(), classTime3));
        
        Professor lisa = new Professor("Lisa Dion","CS","Innovation E314","	Lisa.Dion@uvm.edu");
        prereq = new ArrayList<Class>();

@@ -42,7 +42,7 @@ public class Class{
     public Professor getProf() {
         return prof;
     }
-    public int getCapactiy() {
+    public int getCapacity() {
         return capactiy;
     }
     public ArrayList<Class> getPreReq() {

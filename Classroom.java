@@ -43,7 +43,7 @@ public class Classroom {
    public String getName() {
         return this.name;
    }
-   public int getCapcity() {
+   public int getCapacity() {
         return this.capcity;
    }
    public boolean getAvailability() {
